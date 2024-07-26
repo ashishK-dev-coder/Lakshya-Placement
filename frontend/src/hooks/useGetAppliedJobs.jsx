@@ -7,7 +7,7 @@ const useGetAppliedJobs = () => {
   const dispatch = useDispatch();
   const { authUser } = useSelector((store) => store.auth);
 
-  if (authUser) {
+  // if (authUser) {
     useEffect(() => {
       const fetchAppliedJobs = async () => {
         try {
@@ -24,7 +24,7 @@ const useGetAppliedJobs = () => {
       };
       fetchAppliedJobs();
     }, []);
-  }
+  // }
 };
 
 export default useGetAppliedJobs;

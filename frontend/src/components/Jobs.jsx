@@ -23,7 +23,7 @@ const Jobs = () => {
     }
   }, []);
 
-  if (authUser) {
+  // if (authUser) {
     useEffect(() => {
       if (searchText) {
         const filteredJobs = allJobs.filter((job) => {
@@ -44,7 +44,7 @@ const Jobs = () => {
         navigate("/admin/jobs");
       }
     });
-  }
+  // }
 
   return (
     <>

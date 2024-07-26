@@ -7,7 +7,7 @@ const useGetCompanies = () => {
   const dispatch = useDispatch();
   const { authUser } = useSelector((store) => store.auth);
 
-  if (authUser) {
+  // if (authUser) {
     useEffect(() => {
       const fetchCompany = async () => {
         try {
@@ -22,6 +22,6 @@ const useGetCompanies = () => {
       };
       fetchCompany();
     }, []);
-  }
+  // }
 };
 export default useGetCompanies;

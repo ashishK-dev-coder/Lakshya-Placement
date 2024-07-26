@@ -10,9 +10,9 @@ import { toast } from "sonner";
 
 const Browse = () => {
   const { authUser } = useSelector((store) => store.auth);
-  if (authUser) {
+  // if (authUser) {
     useGetAllJobs();
-  }
+  // }
   const { allJobs } = useSelector((store) => store.job);
   console.log("allJobs", allJobs);
   const navigate = useNavigate();

@@ -9,7 +9,7 @@ const useGetAllJobs = () => {
     const { searchText } = useSelector(store => store.job);
     console.log("searchText",searchText)
 
-    if(authUser){
+    // if(authUser){
         useEffect(() => {
             const fetchJobs = async () => {
                 try {
@@ -25,7 +25,7 @@ const useGetAllJobs = () => {
             }
             fetchJobs();
         }, [])
-    }
+    // }
     
 }
 export default useGetAllJobs;
