@@ -14,7 +14,7 @@ const useGetAllJobs = () => {
             const fetchJobs = async () => {
                 try {
                     axios.defaults.withCredentials = true;
-                    const res = await axios.get(`import.meta.env.VITE_API_URL/api/v1/job/all?keyword=${searchText}`);
+                    const res = await axios.get(`${import.meta.env.VITE_API_URL}/api/v1/job/all?keyword=${searchText}`);
                    
                     if (res.data.success) {
                         dispatch(setAllJobs(res.data.jobs));

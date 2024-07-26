@@ -13,7 +13,7 @@ const useGetAppliedJobs = () => {
         try {
           axios.defaults.withCredentials = true;
           const res = await axios.get(
-            "import.meta.env.VITE_API_URL/api/v1/application/get"
+            import.meta.env.VITE_API_URL+"/api/v1/application/get"
           );
           if (res.data.success) {
             dispatch(setAllAppliedJobs(res.data.application));

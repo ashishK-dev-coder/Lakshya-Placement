@@ -13,7 +13,7 @@ const useGetCompanyById = (id) => {
         try {
           axios.defaults.withCredentials = true;
           const res = await axios.get(
-            `import.meta.env.VITE_API_URL/api/v1/company/getcompany/${id}`
+            `${import.meta.env.VITE_API_URL}/api/v1/company/getcompany/${id}`
           );
           if (res.data.success) {
             dispatch(setSingleCompany(res.data.company));

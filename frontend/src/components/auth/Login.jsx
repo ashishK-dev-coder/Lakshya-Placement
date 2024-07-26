@@ -28,7 +28,7 @@ const Login = () => {
         
         try {
             dispatch(setLoading(true));
-            const res = await axios.post("import.meta.env.VITE_API_URL/api/v1/user/login", input, {
+            const res = await axios.post(import.meta.env.VITE_API_URL+"/api/v1/user/login", input, {
                 headers: {
                     'Content-Type': 'application/json'
                 },
