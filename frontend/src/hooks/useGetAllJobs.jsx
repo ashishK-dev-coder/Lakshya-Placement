@@ -2,10 +2,13 @@ import { setAllJobs } from "@/redux/jobSlice";
 import axios from "axios"
 import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
+import Cookies from 'js-cookie';
 
 const useGetAllJobs = () => {
     const dispatch = useDispatch();
     const { authUser } = useSelector((store) => store.auth);
+    const token = Cookies.get('token');
+    console.log("frontend=token",token)
     const { searchText } = useSelector(store => store.job);
     console.log("searchText",searchText)
 

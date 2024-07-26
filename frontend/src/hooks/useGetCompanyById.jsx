@@ -2,10 +2,13 @@ import { setSingleCompany } from "@/redux/companySlice";
 import axios from "axios";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Cookies from 'js-cookie';
 
 const useGetCompanyById = (id) => {
   const dispatch = useDispatch();
   const { authUser } = useSelector((store) => store.auth);
+  const token = Cookies.get('token');
+  console.log("frontend=token",token)
 
   if (authUser) {
     useEffect(() => {

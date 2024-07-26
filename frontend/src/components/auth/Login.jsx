@@ -10,6 +10,7 @@ import { toast } from 'sonner'
 import { useDispatch, useSelector } from 'react-redux'
 import { setAuthUser, setLoading } from '@/redux/authSlice'
 import { Loader2 } from 'lucide-react'
+import Cookies from 'js-cookie';
 
 const Login = () => {
     const [input, setInput] = useState({
@@ -36,6 +37,8 @@ const Login = () => {
             });
             if (res.data.success) {
                 dispatch(setAuthUser(res.data.user));
+                const token = res.data.token;
+                Cookies.set('token', token, { expires: 7, secure: true });
                 navigate("/");
                 toast.success(res.data.message);
             }
