@@ -13,7 +13,7 @@ const useGetAllAdminJobs = () => {
         try {
           axios.defaults.withCredentials = true;
           const res = await axios.get(
-            "http://localhost:8000/api/v1/job/getadminjobs"
+            "import.meta.env.VITE_API_URL/api/v1/job/getadminjobs"
           );
           if (res.data.success) {
             dispatch(setAdminJobs(res.data.jobs));
